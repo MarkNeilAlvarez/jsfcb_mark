@@ -1,3 +1,4 @@
+
 // Variables are storage of values
 let board;
 let score = 0;
@@ -446,10 +447,10 @@ function canMoveRight(){
 
 
 function canMoveUp(){
-	for(let c=0; c<columns; c++){
-		for(let r=0; r<rows; r++){
-			if(board[r][c] !== 0){
-				if(board[r-1][c] === 0 || board[r-1][c] === board[r][c]){
+	for(let c=1; c<columns; c++){
+		for(let r=1; r<rows; r++){
+			if(board[r][c] !== 1){
+				if(board[r-1][c] === 1 || board[r-1][c] === board[r][c]){
 					return true;
 				}
 			}
@@ -461,7 +462,7 @@ function canMoveUp(){
 
 function canMoveDown(){
 	for(let c=0; c<columns; c++){
-		for(let r=0; r<rows; r++){
+		for(let r=0; r<rows-1; r++){
 			if(board[r][c] !== 0){
 				if(board[r+1][c] === 0 || board[r+1][c] === board[r][c]){
 					return true;
